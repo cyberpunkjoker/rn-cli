@@ -2,10 +2,11 @@ import React, { FC } from 'react';
 import { Appbar } from 'react-native-paper';
 interface CustomHeaderProps {
   navigation: any;
+  title: string;
 }
 
 const CustomHeader: FC<CustomHeaderProps> = (props) => {
-  const { navigation } = props
+  const { navigation, title } = props
 
   const { goBack } = navigation
 
@@ -18,7 +19,7 @@ const CustomHeader: FC<CustomHeaderProps> = (props) => {
   return (
     <Appbar.Header>
       <Appbar.BackAction onPress={_goBack} />
-      <Appbar.Content mode='center-aligned' title="Title" />
+      <Appbar.Content mode='center-aligned' title={title} />
       <Appbar.Action icon="magnify" onPress={_handleSearch} />
       <Appbar.Action icon="dots-vertical" onPress={_handleMore} />
     </Appbar.Header>
